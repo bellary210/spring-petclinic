@@ -6,10 +6,11 @@ pipeline{
 	       sh "git clone https://github.com/bellary210/spring-petclinic.git"
             }
          }
-     stage('install') {
+     stage('Build') {
         steps {
-          sh "mvn package"
-          sh "java -jar target/*.jar"
+               node('master'){
+                  sh 'mvn clean package'
+                  sh "java -jar target/*.jar"
             }
          }        
       }
