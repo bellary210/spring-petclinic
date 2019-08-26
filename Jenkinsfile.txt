@@ -11,6 +11,8 @@ pipeline{
                node('master'){
                   sh 'mvn clean package'
                   sh "java -jar target/*.jar"
+                  
+               {
             }
          }        
       }
