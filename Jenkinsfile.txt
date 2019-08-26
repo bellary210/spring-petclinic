@@ -3,7 +3,7 @@ pipeline{
      stages {
      stage('clone repo and clean it') {
         steps {
-	       sh "git clone https://github.com/srinu541/spring-petclinic.git"
+	       sh "git clone https://github.com/bellary210/spring-petclinic.git"
             }
          }
      stage('install') {
