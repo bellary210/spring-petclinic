@@ -12,7 +12,7 @@ pipeline{
                   sh 'mvn clean package'
                   sh "java -jar target/*.jar"
                   
-               {
+               }
             }
          }        
       }
