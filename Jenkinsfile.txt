@@ -9,8 +9,7 @@ pipeline{
      stage('Build') {
         steps {
                node('master'){
-                  sh 'mvn clean package'
-                  sh "java -jar target/*.jar"
+                  sh label: '', script: '''mvn clean install'''
                   
                }
             }
