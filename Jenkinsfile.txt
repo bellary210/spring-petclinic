@@ -1,13 +1,15 @@
-pipeline {
-    agent any
+pipeline{
+   agent any
      stages {
-        stage('clone repo and clean it') {
-            steps {
-	            sh "git clone https://github.com/bellary210/spring-petclinic.git"
+       stage('package') {
+         steps {
+	           git 'https://github.com/GitPracticeRepo/spring-petclinic.git'
+              sh 'mvn clean package'
+              sh label: '', script: 'java -jar target/*.jar &'
             }
-        }
-        stage('Build') {
-            steps {
-                sh label: '', script: '''mvn clean install'''
-                  
-    }   }   }   } }
+         }
+      }
+
+}
+
+            
